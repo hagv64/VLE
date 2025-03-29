@@ -15,8 +15,16 @@ def polinomio(x, C2, C3, C4):
 
 def Newton_Raphson(rango_x, C2, C3, C4, epsilon=0.00001, max_iter=100):
     n = 1
+    x0 = rango_x[0]
+    while n < max_iter:
+        x1 = x0 - polinomio(x0, C2, C3, C4) / derivada(x0, C2, C3)
+        if abs(x1 - x0) <= epsilon:
+            return x1
+        x0 = x1
+    n = 1
     x0 = rango_x[1]
     while n < max_iter:
+        x
         x1 = x0 - polinomio(x0, C2, C3, C4) / derivada(x0, C2, C3)
         if abs(x1 - x0) <= epsilon:
             return x1
